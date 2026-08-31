@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PRIVACYOS | Privacy Intelligence</title>
+
+    <meta name="description"
+          content="PRIVACYOS - Plataforma de inteligencia y gestión de riesgos de privacidad">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<!-- =========================
+     SIDEBAR
+========================= -->
+
+<aside class="sidebar">
+
+    <div class="brand">
+
+        <div class="brand-icon">
+            P
+        </div>
+
+        <div>
+            <h2>PRIVACYOS</h2>
+            <span>Privacy Intelligence</span>
+        </div>
+
+    </div>
+
+
+    <nav>
+
+        <button class="nav-button active" data-section="scanner">
+            <span>⌕</span>
+            Analizador
+        </button>
+
+        <button class="nav-button" data-section="reports">
+            <span>▣</span>
+            Reportes
+        </button>
+
+        <button class="nav-button" data-section="regulations">
+            <span>⚖</span>
+            Regulaciones
+        </button>
+
+    </nav>
+
+
+    <div class="system-status">
+
+        <span class="status-dot"></span>
+
+        <span>
+            Motor local operativo
+        </span>
+
+    </div>
+
+</aside>
+
+
+<!-- =========================
+     CONTENIDO PRINCIPAL
+========================= -->
+
+<main class="main-content">
+
+    <!-- HEADER -->
+
+    <header class="topbar">
+
+        <div>
+
+            <p class="eyebrow">
+                PRIVACY INTELLIGENCE PLATFORM
+            </p>
+
+            <h1 id="pageTitle">
+                Analizador de privacidad
+            </h1>
+
+        </div>
+
+        <div class="prototype-badge">
+            PROTOTIPO · MVP
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         SECCIÓN ANALIZADOR
+    ====================================================== -->
+
+    <section id="scanner" class="page-section active">
+
+
+        <!-- HERO -->
+
+        <div class="hero">
+
+            <div class="hero-content">
+
+                <p class="eyebrow">
+                    DATOS + TECNOLOGÍA + REGULACIÓN
+                </p>
+
+                <h2>
+                    Convierte información compleja
+                    en
+                    <span>riesgos accionables.</span>
+                </h2>
+
+                <p class="hero-description">
+
+                    PRIVACYOS analiza información de privacidad,
+                    identifica datos tratados y detecta señales
+                    de riesgo para facilitar la toma de decisiones.
+
+                </p>
+
+            </div>
+
+
+            <div class="hero-logo">
+
+                <div class="orbit">
+
+                    <div class="orbit-center">
+                        P
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- INPUT -->
+
+        <div class="card input-card">
+
+            <div class="card-header">
+
+                <div>
+
+                    <span class="step-number">
+                        01
+                    </span>
+
+                    <h3>
+                        Fuente a analizar
+                    </h3>
+
+                </div>
+
+                <span class="local-analysis">
+                    ● ANÁLISIS LOCAL
+                </span>
+
+            </div>
+
+
+            <div class="form-grid">
+
+                <div class="form-group">
+
+                    <label>
+                        Servicio / organización
+                    </label>
+
+                    <input
+                        type="text"
+                        id="serviceName"
+                        placeholder="Ej. Mi Aplicación"
+                        value="Servicio Digital Demo"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        URL
+                    </label>
+
+                    <input
+                        type="text"
+                        id="serviceUrl"
+                        placeholder="https://ejemplo.com"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Política de privacidad / texto a analizar
+                </label>
+
+                <textarea
+                    id="policyText"
+                    rows="11"
+                    placeholder="Pega aquí una política de privacidad..."
+                >Esta aplicación recopila nombre, correo electrónico, dirección IP, ubicación y datos de uso. Utilizamos esta información para prestar el servicio, realizar analítica y mostrar publicidad. Podemos compartir información con proveedores de analítica, publicidad y servicios de nube. Algunos proveedores pueden procesar datos fuera de Chile. Conservamos la información mientras sea necesaria para las finalidades descritas. El usuario puede solicitar acceso, rectificación, eliminación y oposición al tratamiento. Utilizamos cookies y tecnologías similares. En algunos casos podemos crear perfiles a partir de los datos de uso.</textarea>
+
+            </div>
+
+
+            <div class="actions">
+
+                <button
+                    class="primary-button"
+                    id="analyzeButton"
+                >
+                    Analizar privacidad
+                    <span>→</span>
+                </button>
+
+
+                <button
+                    class="secondary-button"
+                    id="exampleButton"
+                >
+                    Cargar ejemplo
+                </button>
+
+
+                <span class="privacy-note">
+                    El texto se procesa localmente en este prototipo.
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             RESULTADOS
+        ====================================================== -->
+
+        <div
+            id="results"
+            class="results hidden"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="eyebrow">
+                        02 · RESULTADO
+                    </p>
+
+                    <h2>
+                        Diagnóstico de privacidad
+                    </h2>
+
+                </div>
+
+
+                <button
+                    class="secondary-button"
+                    id="exportButton"
+                >
+                    Exportar JSON ↓
+                </button>
+
+            </div>
+
+
+            <!-- MÉTRICAS -->
+
+            <div class="metrics-grid">
+
+
+                <!-- SCORE -->
+
+                <div class="score-card">
+
+                    <div
+                        class="score-circle"
+                        id="scoreCircle"
+                    >
+
+                        <strong id="scoreValue">
+                            0
+                        </strong>
+
+                        <small>
+                            /100
+                        </small>
+
+                    </div>
+
+
+                    <div class="score-information">
+
+                        <span
+                            id="riskLevel"
+                            class="risk-label"
+                        >
+                            —
+                        </span>
+
+                        <h3 id="riskTitle">
+                            Sin análisis
+                        </h3>
+
+                        <p id="riskDescription">
+                            Ejecuta un análisis para generar
+                            un diagnóstico.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DATOS -->
+
+                <div class="metric-card">
+
+                    <span>
+                        Datos detectados
+                    </span>
+
+                    <strong id="dataCount">
+                        0
+                    </strong>
+
+                    <small>
+                        categorías
+                    </small>
+
+                </div>
+
+
+                <!-- RIESGOS -->
+
+                <div class="metric-card">
+
+                    <span>
+                        Señales de riesgo
+                    </span>
+
+                    <strong id="riskCount">
+                        0
+                    </strong>
+
+                    <small>
+                        hallazgos
+                    </small>
+
+                </div>
+
+
+                <!-- REGULACIONES -->
+
+                <div class="metric-card">
+
+                    <span>
+                        Marcos evaluados
+                    </span>
+
+                    <strong>
+                        4
+                    </strong>
+
+                    <small>
+                        jurisdicciones
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- DATOS Y FINALIDADES -->
+
+            <div class="two-columns">
+
+
+                <div class="card">
+
+                    <div class="card-header">
+
+                        <h3>
+                            A · Datos personales detectados
+                        </h3>
+
+                    </div>
+
+                    <div
+                        id="dataList"
+                        class="tag-container"
+                    ></div>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-header">
+
+                        <h3>
+                            B · Finalidades detectadas
+                        </h3>
+
+                    </div>
+
+                    <div
+                        id="purposeList"
+                    ></div>
+
+                </div>
+
+            </div>
+
+
+            <!-- MOTOR REGULATORIO -->
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <span class="step-number">
+                            C
+                        </span>
+
+                        <h3>
+                            Motor regulatorio
+                        </h3>
+
+                    </div>
+
+                    <span class="disclaimer">
+                        Orientativo · no constituye asesoría legal
+                    </span>
+
+                </div>
+
+
+                <div
+                    id="regulationResults"
+                    class="regulation-grid"
+                ></div>
+
+            </div>
+
+
+            <!-- HALLAZGOS -->
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <span class="step-number">
+                            D
+                        </span>
+
+                        <h3>
+                            Hallazgos prioritarios
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="findingsList"
+                ></div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         REPORTES
+    ====================================================== -->
+
+    <section
+        id="reports"
+        class="page-section"
+    >
+
+        <div class="empty-state">
+
+            <div class="empty-icon">
+                ▣
+            </div>
+
+            <h2>
+                Reportes
+            </h2>
+
+            <p>
+                Los diagnósticos realizados pueden ser
+                exportados como archivos JSON.
+            </p>
+
+            <p>
+                En una versión productiva esta sección
+                almacenaría históricos, responsables,
+                evidencias y planes de acción.
+            </p>
+
+            <button
+                class="primary-button"
+                onclick="goToScanner()"
+            >
+                Ir al analizador →
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         REGULACIONES
+    ====================================================== -->
+
+    <section
+        id="regulations"
+        class="page-section"
+    >
+
+        <div class="section-heading">
+
+            <div>
+
+                <p class="eyebrow">
+                    MARCO COMPARATIVO
+                </p>
+
+                <h2>
+                    Regulaciones incorporadas
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="regulation-cards">
+
+
+            <div class="regulation-card">
+
+                <div class="regulation-code">
+                    CL
+                </div>
+
+                <h3>
+                    Ley 21.719
+                </h3>
+
+                <p>
+                    Chile · protección de datos personales
+                    y nueva institucionalidad.
+                </p>
+
+                <span>
+                    Referencia del prototipo
+                </span>
+
+            </div>
+
+
+            <div class="regulation-card">
+
+                <div class="regulation-code">
+                    EU
+                </div>
+
+                <h3>
+                    GDPR
+                </h3>
+
+                <p>
+                    Unión Europea · Reglamento General
+                    de Protección de Datos.
+                </p>
+
+                <span>
+                    Referencia del prototipo
+                </span>
+
+            </div>
+
+
+            <div class="regulation-card">
+
+                <div class="regulation-code">
+                    BR
+                </div>
+
+                <h3>
+                    LGPD
+                </h3>
+
+                <p>
+                    Brasil · Lei Geral de Proteção
+                    de Dados Pessoais.
+                </p>
+
+                <span>
+                    Referencia del prototipo
+                </span>
+
+            </div>
+
+
+            <div class="regulation-card">
+
+                <div class="regulation-code">
+                    CA
+                </div>
+
+                <h3>
+                    CCPA / CPRA
+                </h3>
+
+                <p>
+                    California · derechos sobre
+                    información personal.
+                </p>
+
+                <span>
+                    Referencia del prototipo
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="legal-notice">
+
+            <strong>
+                Importante:
+            </strong>
+
+            Las evaluaciones de este prototipo son
+            orientativas y no determinan por sí solas
+            cumplimiento o incumplimiento legal.
+
+        </div>
+
+    </section>
+
+
+    <footer>
+
+        PRIVACYOS · Prototipo académico ·
+        Datos + Tecnología + Regulación
+
+    </footer>
+
+</main>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>
