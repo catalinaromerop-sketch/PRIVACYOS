@@ -1,0 +1,1367 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+
+:root {
+
+    --background: #07100f;
+    --background-light: #0b1715;
+
+    --card: #0d1917;
+    --card-light: #10201d;
+
+    --border: #1d332f;
+
+    --text: #edf8f4;
+    --muted: #8ca7a0;
+
+    --green: #55e6b2;
+    --green-dark: #2dbd8e;
+
+    --yellow: #f5c96b;
+    --red: #ff7777;
+
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 80% 0%,
+            #12372e 0%,
+            #07100f 35%
+        );
+
+    color: var(--text);
+
+    font-family: "DM Sans", sans-serif;
+
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+
+    width: 240px;
+
+    height: 100vh;
+
+    position: fixed;
+
+    left: 0;
+    top: 0;
+
+    background: rgba(5, 13, 12, 0.96);
+
+    border-right: 1px solid var(--border);
+
+    padding: 28px 18px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    z-index: 10;
+
+}
+
+
+.brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 50px;
+
+}
+
+
+.brand-icon {
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 12px;
+
+    display: grid;
+    place-items: center;
+
+    background: var(--green);
+
+    color: #06100d;
+
+    font: 700 23px "Space Grotesk";
+
+}
+
+
+.brand h2 {
+
+    margin: 0;
+
+    font: 700 15px "Space Grotesk";
+
+    letter-spacing: 1px;
+
+}
+
+
+.brand span {
+
+    display: block;
+
+    margin-top: 3px;
+
+    color: var(--muted);
+
+    font-size: 9px;
+
+}
+
+
+.nav-button {
+
+    width: 100%;
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--muted);
+
+    padding: 13px;
+
+    border-radius: 9px;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    margin-bottom: 4px;
+
+    transition: 0.2s;
+
+}
+
+
+.nav-button span {
+
+    margin-right: 10px;
+
+}
+
+
+.nav-button:hover {
+
+    background: #12231f;
+
+    color: white;
+
+}
+
+
+.nav-button.active {
+
+    background: #12231f;
+
+    color: white;
+
+    border-left: 3px solid var(--green);
+
+}
+
+
+.system-status {
+
+    margin-top: auto;
+
+    color: var(--muted);
+
+    font-size: 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+}
+
+
+.status-dot {
+
+    width: 7px;
+    height: 7px;
+
+    background: var(--green);
+
+    border-radius: 50%;
+
+    box-shadow: 0 0 12px var(--green);
+
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.main-content {
+
+    margin-left: 240px;
+
+    width: calc(100% - 240px);
+
+    max-width: 1400px;
+
+    padding: 32px 5vw 20px;
+
+}
+
+
+.topbar {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    margin-bottom: 28px;
+
+}
+
+
+.eyebrow {
+
+    color: var(--green);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin: 0 0 8px;
+
+}
+
+
+.topbar h1 {
+
+    font: 600 29px "Space Grotesk";
+
+    margin: 0;
+
+}
+
+
+.prototype-badge {
+
+    border: 1px solid #31584d;
+
+    color: var(--green);
+
+    padding: 7px 10px;
+
+    border-radius: 20px;
+
+    font-size: 9px;
+
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+
+    min-height: 255px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 19px;
+
+    padding: 38px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    background:
+        linear-gradient(
+            120deg,
+            #10251f,
+            #0a1614
+        );
+
+    overflow: hidden;
+
+}
+
+
+.hero h2 {
+
+    font: 600 clamp(30px, 4vw, 46px) "Space Grotesk";
+
+    line-height: 1.06;
+
+    max-width: 720px;
+
+    margin: 0 0 16px;
+
+}
+
+
+.hero h2 span {
+
+    color: var(--green);
+
+}
+
+
+.hero-description {
+
+    color: var(--muted);
+
+    max-width: 680px;
+
+    line-height: 1.6;
+
+}
+
+
+.hero-logo {
+
+    margin-right: 8%;
+
+}
+
+
+.orbit {
+
+    width: 140px;
+    height: 140px;
+
+    border: 1px solid #31584d;
+
+    border-radius: 50%;
+
+    display: grid;
+
+    place-items: center;
+
+    position: relative;
+
+}
+
+
+.orbit::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 200px;
+    height: 70px;
+
+    border: 1px solid #294b42;
+
+    border-radius: 50%;
+
+    transform: rotate(25deg);
+
+}
+
+
+.orbit-center {
+
+    width: 58px;
+    height: 58px;
+
+    border-radius: 17px;
+
+    background: var(--green);
+
+    color: #06100d;
+
+    display: grid;
+
+    place-items: center;
+
+    font: 700 29px "Space Grotesk";
+
+    box-shadow:
+        0 0 30px rgba(85,230,178,.25);
+
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.card {
+
+    background: rgba(13,25,23,.95);
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+
+    padding: 22px;
+
+    margin-top: 18px;
+
+}
+
+
+.card-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 18px;
+
+}
+
+
+.card-header > div {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+.card-header h3 {
+
+    margin: 0;
+
+    font: 600 15px "Space Grotesk";
+
+}
+
+
+.step-number {
+
+    color: var(--green);
+
+    border: 1px solid #2b574b;
+
+    border-radius: 6px;
+
+    padding: 5px 7px;
+
+    font-size: 9px;
+
+}
+
+
+.local-analysis {
+
+    color: var(--green);
+
+    font-size: 9px;
+
+}
+
+
+.form-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.form-group {
+
+    margin-bottom: 14px;
+
+}
+
+
+.form-group label {
+
+    display: block;
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+    margin-bottom: 7px;
+
+}
+
+
+input,
+textarea {
+
+    width: 100%;
+
+    background: #08120f;
+
+    color: white;
+
+    border: 1px solid #25443b;
+
+    border-radius: 8px;
+
+    padding: 12px;
+
+    outline: none;
+
+}
+
+
+input:focus,
+textarea:focus {
+
+    border-color: var(--green);
+
+}
+
+
+textarea {
+
+    resize: vertical;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.primary-button,
+.secondary-button {
+
+    border-radius: 8px;
+
+    padding: 11px 15px;
+
+    cursor: pointer;
+
+    font-weight: 600;
+
+    transition: .2s;
+
+}
+
+
+.primary-button {
+
+    border: none;
+
+    background: var(--green);
+
+    color: #06100d;
+
+}
+
+
+.primary-button:hover {
+
+    background: #79efc5;
+
+}
+
+
+.secondary-button {
+
+    background: transparent;
+
+    border: 1px solid #29483f;
+
+    color: white;
+
+}
+
+
+.secondary-button:hover {
+
+    background: #13241f;
+
+}
+
+
+.privacy-note {
+
+    color: #607870;
+
+    font-size: 10px;
+
+    margin-left: 10px;
+
+}
+
+
+.hidden {
+
+    display: none;
+
+}
+
+
+/* =========================
+   RESULTS
+========================= */
+
+.results {
+
+    margin-top: 42px;
+
+}
+
+
+.section-heading {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+    margin-bottom: 15px;
+
+}
+
+
+.section-heading h2 {
+
+    margin: 0;
+
+    font: 600 27px "Space Grotesk";
+
+}
+
+
+/* =========================
+   METRICS
+========================= */
+
+.metrics-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        2fr
+        1fr
+        1fr
+        1fr;
+
+    gap: 11px;
+
+}
+
+
+.score-card,
+.metric-card {
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    padding: 19px;
+
+}
+
+
+.score-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+}
+
+
+.score-circle {
+
+    width: 94px;
+    height: 94px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    display: grid;
+
+    place-content: center;
+
+    text-align: center;
+
+    background:
+        conic-gradient(
+            var(--green) 0deg,
+            #20352f 0deg
+        );
+
+    position: relative;
+
+}
+
+
+.score-circle::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 8px;
+
+    border-radius: 50%;
+
+    background: var(--card);
+
+}
+
+
+.score-circle strong,
+.score-circle small {
+
+    position: relative;
+
+    z-index: 1;
+
+}
+
+
+.score-circle strong {
+
+    font: 700 26px "Space Grotesk";
+
+}
+
+
+.score-circle small {
+
+    color: var(--muted);
+
+    font-size: 8px;
+
+}
+
+
+.risk-label {
+
+    font-size: 9px;
+
+    color: var(--green);
+
+    background: #173d31;
+
+    padding: 5px 7px;
+
+    border-radius: 8px;
+
+}
+
+
+.score-information h3 {
+
+    margin: 8px 0 5px;
+
+    font: 600 16px "Space Grotesk";
+
+}
+
+
+.score-information p {
+
+    margin: 0;
+
+    color: var(--muted);
+
+    font-size: 10px;
+
+    line-height: 1.5;
+
+}
+
+
+.metric-card {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+}
+
+
+.metric-card span,
+.metric-card small {
+
+    color: var(--muted);
+
+    font-size: 10px;
+
+}
+
+
+.metric-card strong {
+
+    font: 600 29px "Space Grotesk";
+
+    margin: 8px 0;
+
+}
+
+
+/* =========================
+   TWO COLUMNS
+========================= */
+
+.two-columns {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 0;
+
+}
+
+
+.two-columns .card:first-child {
+
+    border-radius: 14px 0 0 14px;
+
+}
+
+
+.two-columns .card:last-child {
+
+    border-radius: 0 14px 14px 0;
+
+}
+
+
+.tag-container {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+}
+
+
+.tag {
+
+    border: 1px solid #2b5146;
+
+    background: #0b1c18;
+
+    color: #bcefe0;
+
+    border-radius: 7px;
+
+    padding: 7px 9px;
+
+    font-size: 10px;
+
+}
+
+
+.purpose-item {
+
+    padding: 9px;
+
+    margin: 7px 0;
+
+    background: #091613;
+
+    border-radius: 7px;
+
+    font-size: 11px;
+
+}
+
+
+.purpose-item::before {
+
+    content: "●";
+
+    color: var(--green);
+
+    margin-right: 8px;
+
+}
+
+
+/* =========================
+   REGULATIONS
+========================= */
+
+.regulation-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap: 10px;
+
+}
+
+
+.regulation-result {
+
+    border: 1px solid #25443b;
+
+    background: #091613;
+
+    border-radius: 9px;
+
+    padding: 13px;
+
+}
+
+
+.regulation-result strong {
+
+    font: 600 13px "Space Grotesk";
+
+}
+
+
+.regulation-result span {
+
+    display: block;
+
+    color: var(--muted);
+
+    font-size: 9px;
+
+    line-height: 1.5;
+
+    margin-top: 6px;
+
+}
+
+
+.regulation-status {
+
+    display: inline-block;
+
+    margin-top: 10px;
+
+    padding: 4px 6px;
+
+    border-radius: 5px;
+
+    background: #17352c;
+
+    color: var(--green);
+
+    font-size: 8px;
+
+}
+
+
+.disclaimer {
+
+    color: var(--muted);
+
+    font-size: 9px;
+
+}
+
+
+/* =========================
+   FINDINGS
+========================= */
+
+.finding {
+
+    border: 1px solid #30423c;
+
+    border-left: 3px solid var(--yellow);
+
+    border-radius: 9px;
+
+    padding: 13px;
+
+    margin: 8px 0;
+
+    background: #0a1714;
+
+}
+
+
+.finding.high {
+
+    border-left-color: var(--red);
+
+}
+
+
+.finding.low {
+
+    border-left-color: var(--green);
+
+}
+
+
+.finding strong {
+
+    font: 600 11px "Space Grotesk";
+
+}
+
+
+.finding p {
+
+    margin: 6px 0 0;
+
+    color: var(--muted);
+
+    font-size: 10px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================
+   OTHER PAGES
+========================= */
+
+.page-section {
+
+    display: none;
+
+}
+
+
+.page-section.active {
+
+    display: block;
+
+}
+
+
+.empty-state {
+
+    max-width: 650px;
+
+    margin: 100px auto;
+
+    text-align: center;
+
+}
+
+
+.empty-icon {
+
+    font-size: 40px;
+
+    color: var(--green);
+
+}
+
+
+.empty-state p {
+
+    color: var(--muted);
+
+    line-height: 1.6;
+
+}
+
+
+.regulation-cards {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap: 12px;
+
+}
+
+
+.regulation-card {
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    padding: 20px;
+
+}
+
+
+.regulation-code {
+
+    width: 42px;
+    height: 42px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 10px;
+
+    background: #17362e;
+
+    color: var(--green);
+
+    font-weight: bold;
+
+}
+
+
+.regulation-card h3 {
+
+    font: 600 17px "Space Grotesk";
+
+    margin: 18px 0 8px;
+
+}
+
+
+.regulation-card p {
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+    line-height: 1.5;
+
+}
+
+
+.regulation-card span {
+
+    color: var(--green);
+
+    font-size: 8px;
+
+}
+
+
+.legal-notice {
+
+    margin-top: 18px;
+
+    padding: 15px;
+
+    border: 1px solid #5a4c2a;
+
+    background: #211d12;
+
+    border-radius: 9px;
+
+    color: #c9b98a;
+
+    font-size: 10px;
+
+}
+
+
+footer {
+
+    text-align: center;
+
+    color: #526a63;
+
+    font-size: 9px;
+
+    padding: 45px 0 10px;
+
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width: 950px) {
+
+    .sidebar {
+
+        width: 70px;
+
+    }
+
+
+    .brand span,
+    .nav-button:not(.active),
+    .system-status span {
+
+        font-size: 0;
+
+    }
+
+
+    .brand {
+
+        justify-content: center;
+
+    }
+
+
+    .main-content {
+
+        margin-left: 70px;
+
+        width: calc(100% - 70px);
+
+    }
+
+
+    .metrics-grid {
+
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+
+    .score-card {
+
+        grid-column: span 2;
+
+    }
+
+
+    .regulation-grid,
+    .regulation-cards {
+
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+}
+
+
+@media(max-width: 650px) {
+
+    .main-content {
+
+        padding: 20px 12px;
+
+    }
+
+
+    .prototype-badge {
+
+        display: none;
+
+    }
+
+
+    .hero {
+
+        padding: 26px 22px;
+
+    }
+
+
+    .hero h2 {
+
+        font-size: 30px;
+
+    }
+
+
+    .hero-logo {
+
+        display: none;
+
+    }
+
+
+    .form-grid,
+    .two-columns,
+    .regulation-grid,
+    .regulation-cards {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .two-columns .card:first-child,
+    .two-columns .card:last-child {
+
+        border-radius: 14px;
+
+    }
+
+
+    .metrics-grid {
+
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+
+    .score-card {
+
+        grid-column: span 2;
+
+    }
+
+
+    .actions {
+
+        display: flex;
+
+        flex-wrap: wrap;
+
+    }
+
+
+    .privacy-note {
+
+        width: 100%;
+
+        margin: 8px 0;
+
+    }
+
+}
